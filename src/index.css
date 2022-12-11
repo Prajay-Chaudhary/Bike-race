@@ -22,6 +22,18 @@ ul {
     list-style-type: none;
 }
 
+.paragraph-align {
+    text-align: justify;
+}
+
+.header-color {
+    color: rgb(255, 115, 0) !important;
+}
+
+.header-color-bg {
+    background: linear-gradient(45deg, red, blue);
+}
+
 .btn {
     padding: 12px 32px;
     font-size: 1rem;

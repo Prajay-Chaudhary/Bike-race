@@ -1,0 +1,22 @@
+.emoji span {
+    font-size: 4rem;
+    padding: 0 .5rem;
+}
+
+.counter {
+    background-image: url('../assets/timer-bg.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.timer {
+    background-color: #242424;
+    border-radius: 1rem;
+}
+
+#headline {
+    text-transform: uppercase;
+    font-weight: 500;
+}

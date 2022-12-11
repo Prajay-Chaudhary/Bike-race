@@ -11,7 +11,7 @@ const HeroImage = () => {
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["On June 21, 2023", "Hurry Up!", "Join for contest!"];
+  const toRotate = ["On April 21, 2023", "Hurry Up!", "Join for contest!"];
   const period = 2000;
 
   useEffect(() => {
@@ -65,13 +65,13 @@ const HeroImage = () => {
                   {`Colorado Summer Bike Races,`}{" "}
                   <span
                     className="txt-rotate ms-1 m-md-0"
-                    dataPeriod="1000"
-                    data-rotate='[ "On June 21, 2023", "Hurry Up!", "Join for contest!" ]'
+                    dataperiod="1000"
+                    data-rotate='[ "On April 21, 2023", "Hurry Up!", "Join for contest!" ]'
                   >
                     <span className="wrap">{text}</span>
                   </span>
                 </h1>
-                <p className="ms-2 m-md-0">
+                <p className="ms-2 m-md-0 paragraph-align">
                   Cyclists around the world over look forward to Colorado’s
                   bike-racing season. The physical challenge of our lofty
                   altitude (ideal for bragging rights) combines with amazing
@@ -79,7 +79,7 @@ const HeroImage = () => {
                 </p>
                 <Link to={"/Contest"}>
                   <button
-                    className="btn btn-outline-success ml-s-2 ml-md-0"
+                    className="btn btn-outline-success ms-2"
                     onClick={() => console.log("connect")}
                   >
                     Let’s Connect <ArrowRightCircle size={25} />

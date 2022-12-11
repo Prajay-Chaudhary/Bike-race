@@ -19,11 +19,11 @@ const Navbar = () => {
     <div className="container-fluid">
       <div className={color ? "header header-bg" : "header"}>
         <Link to={"/"}>
-          <h1>Colorado</h1>
+          <h1>Boulder Bike Tour</h1>
         </Link>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li>
-            <Link to={"/"} >Home</Link>
+            <Link to={"/"}>Home</Link>
           </li>
           <li>
             <Link to={"/Rider"}>Rider</Link>
