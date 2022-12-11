@@ -48,7 +48,7 @@ const RaceCountDown = () => {
       <section className="counter my-5">
         <div className="container-fluid text-center p-5">
           <div className="row">
-            <div className="col-lg-6 col-md-12">
+            <div className="col-xl-6 col-md-12">
               <h2
                 id="headline"
                 className="text-center text-white display-md-3 display-sm-2 pt-2 mt-2"
@@ -59,7 +59,7 @@ const RaceCountDown = () => {
             </div>
             <div
               id="countdown"
-              className="col-lg-6 col-md-12 d-flex flex-row flex-wrap justify-content-center"
+              className="col-xl-6 col-md-12 d-flex flex-row flex-wrap justify-content-center"
             >
               <div className="text-center  timer col-sm-4 col-md-2 flex-wrap header-color-bg mb-3">
                 {" "}
