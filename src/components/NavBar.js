@@ -19,7 +19,7 @@ const Navbar = () => {
     <div className="container-fluid">
       <div className={color ? "header header-bg" : "header"}>
         <Link to={"/"}>
-          <h1>Boulder Bike Tour</h1>
+          <img src={require('../../src/assets/logo.jpeg')} alt="logo" className="logo p-2" />
         </Link>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li>

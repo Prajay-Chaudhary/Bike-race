@@ -5,11 +5,13 @@ import Contest from "./routes/Contest";
 import Rider from "./routes/Rider";
 import Home from "./routes/Home";
 import { Route, Routes } from "react-router-dom";
+import NavBar from "./components/NavBar"
 import "./index.css";
 
 function App() {
   return (
     <div>
+      <NavBar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Photo" element={<Photo />} />
