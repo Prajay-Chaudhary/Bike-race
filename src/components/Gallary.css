@@ -1,4 +1,19 @@
-.image-height {
-    height: 300px;
+.image {
+    height: 350px;
     width: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+
+.text {
+    background: #CF3E21;
+    background: linear-gradient(to right, #CF3E21 31%, #88CF40 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
