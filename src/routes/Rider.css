@@ -1,0 +1,26 @@
+/* rider card and profile photo*/
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgb(216, 106, 33);
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 20px;
+}
+
+
+/*small screen */
+
+@media screen and (max-width: 400px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, auto) !important;
+        grid-gap: 5px;
+    }
+}

@@ -1,12 +1,12 @@
 .image {
-    height: 350px;
-    width: 350px;
+    height: 300px;
+    width: 300px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 30px;
 }
 
 .image:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: all 0.5s ease;
 }
 
