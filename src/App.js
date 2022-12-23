@@ -5,7 +5,7 @@ import Photo from "./routes/Photo";
 import Contest from "./routes/Contest";
 import Rider from "./routes/Rider";
 import Home from "./routes/Home";
-import Maps from "./routes/Maps";
+import Maps from "./routes/Map";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar"
 import "./index.css";

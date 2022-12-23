@@ -11,9 +11,13 @@
 }
 
 .text {
-    background: #CF3E21;
-    background: linear-gradient(to right, #CF3E21 31%, #88CF40 100%);
+    background: #cf3e21;
+    background: linear-gradient(to right, #cf3e21 31%, #88cf40 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.imgFull {
+    width: auto !important;
 }

@@ -46,7 +46,11 @@ const GallaryItem = ({ url, id }) => {
               ></button>
             </div>
             <div className="modal-body">
-              <img src={url} alt="bikes" className="w-full h-full pop-up-image" />
+              <img
+                src={url}
+                alt="bikes"
+                className="pop-up-image mx-auto img-fluid"
+              />
             </div>
           </div>
         </div>
