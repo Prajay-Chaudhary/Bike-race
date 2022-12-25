@@ -1,8 +1,9 @@
 /* rider card and profile photo*/
 
 .profile-image {
-    width: 100px;
-    height: 100px;
+    max-width: 100%;
+    height: auto;
+    width: auto;
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid rgb(216, 106, 33);
@@ -17,10 +18,19 @@
 
 /*small screen */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 970px) {
     .wrapper {
-        display: grid;
         grid-template-columns: repeat(2, auto) !important;
-        grid-gap: 5px;
+        grid-gap: 20px;
+    }
+    .profile-image {
+        height: 70px !important;
+        width: 70px !important;
+    }
+}
+
+@media screen and (max-width: 591px) {
+    .wrapper {
+        grid-template-columns: repeat(1, auto) !important;
     }
 }

@@ -6,7 +6,12 @@ export const Data = [
     state: "IL",
     imgUrl:
       "https://images.pexels.com/photos/2794739/pexels-photo-2794739.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 40.00, lng: -105.35",
+    position: [
+      {
+        lat: 40.0,
+        lng: -105.35,
+      },
+    ],
   },
   {
     first: "Jason",
@@ -15,7 +20,12 @@ export const Data = [
     state: "CA",
     imgUrl:
       "https://images.pexels.com/photos/217860/pexels-photo-217860.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 39.95, lng: -105.24",
+    position: [
+      {
+        lat: 39.95,
+        lng: -105.24,
+      },
+    ],
   },
   {
     first: "Howard",
@@ -24,7 +34,12 @@ export const Data = [
     state: "MO",
     imgUrl:
       "https://images.pexels.com/photos/1161994/pexels-photo-1161994.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 40.06, lng: -105.26",
+    position: [
+      {
+        lat: 40.06,
+        lng: -105.26,
+      },
+    ],
   },
   {
     first: "Maggie",
@@ -33,7 +48,12 @@ export const Data = [
     state: "OH",
     imgUrl:
       "https://images.pexels.com/photos/2880476/pexels-photo-2880476.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 40.03, lng: -105.23",
+    position: [
+      {
+        lat: 40.03,
+        lng: -105.23,
+      },
+    ],
   },
   {
     first: "Lawrence",
@@ -42,7 +62,12 @@ export const Data = [
     state: "FL",
     imgUrl:
       "https://images.pexels.com/photos/217864/pexels-photo-217864.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 40.04, lng: -105.23",
+    position: [
+      {
+        lat: 40.04,
+        lng: -105.23,
+      },
+    ],
   },
   {
     first: "Irene",
@@ -51,7 +76,12 @@ export const Data = [
     state: "AZ",
     imgUrl:
       "https://images.pexels.com/photos/3642537/pexels-photo-3642537.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 39.96, lng: -105.22",
+    position: [
+      {
+        lat: 39.96,
+        lng: -105.22,
+      },
+    ],
   },
   {
     first: "Nancy",
@@ -60,7 +90,12 @@ export const Data = [
     state: "MD",
     imgUrl:
       "https://images.pexels.com/photos/217825/pexels-photo-217825.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 39.98, lng: -105.21",
+    position: [
+      {
+        lat: 40.02,
+        lng: -105.26,
+      },
+    ],
   },
   {
     first: "Tara",
@@ -69,7 +104,12 @@ export const Data = [
     state: "MN",
     imgUrl:
       "https://images.pexels.com/photos/217869/pexels-photo-217869.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 40.00, lng: -105.25",
+    position: [
+      {
+        lat: 40.02,
+        lng: -105.3,
+      },
+    ],
   },
   {
     first: "Alejandro",
@@ -78,7 +118,12 @@ export const Data = [
     state: "ME",
     imgUrl:
       "https://images.pexels.com/photos/564094/pexels-photo-564094.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 40.02, lng: -105.26",
+    position: [
+      {
+        lat: 40.02,
+        lng: -105.26,
+      },
+    ],
   },
   {
     first: "Tricia",
@@ -87,7 +132,12 @@ export const Data = [
     state: "CT",
     imgUrl:
       "https://images.pexels.com/photos/2341568/pexels-photo-2341568.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 40.02, lng: -105.30",
+    position: [
+      {
+        lat: 40.01,
+        lng: -105.2,
+      },
+    ],
   },
   {
     first: "Travis",
@@ -96,7 +146,12 @@ export const Data = [
     state: "WI",
     imgUrl:
       "https://images.pexels.com/photos/2317577/pexels-photo-2317577.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 40.01, lng: -105.20",
+    position: [
+      {
+        lat: 39.98,
+        lng: -105.24,
+      },
+    ],
   },
   {
     first: "Joan",
@@ -105,7 +160,12 @@ export const Data = [
     state: "VA",
     imgUrl:
       "https://images.pexels.com/photos/2178111/pexels-photo-2178111.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 39.98, lng: -105.24",
+    position: [
+      {
+        lat: 39.99,
+        lng: -105.25,
+      },
+    ],
   },
   {
     first: "Joseph",
@@ -114,7 +174,12 @@ export const Data = [
     state: "NJ",
     imgUrl:
       "https://images.pexels.com/photos/2885429/pexels-photo-2885429.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 39.99, lng: -105.25",
+    position: [
+      {
+        lat: 40.01,
+        lng: -105.29,
+      },
+    ],
   },
   {
     first: "Matthew",
@@ -123,7 +188,12 @@ export const Data = [
     state: "MO",
     imgUrl:
       "https://images.pexels.com/photos/2802558/pexels-photo-2802558.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 40.01, lng: -105.29",
+    position: [
+      {
+        lat: 39.97,
+        lng: -105.27,
+      },
+    ],
   },
   {
     first: "Katie",
@@ -132,7 +202,12 @@ export const Data = [
     state: "VA",
     imgUrl:
       "https://images.pexels.com/photos/217844/pexels-photo-217844.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 39.97, lng: -105.27",
+    position: [
+      {
+        lat: 39.97,
+        lng: -105.33,
+      },
+    ],
   },
   {
     first: "Leo",
@@ -141,7 +216,12 @@ export const Data = [
     state: "TX",
     imgUrl:
       "https://images.pexels.com/photos/3692909/pexels-photo-3692909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 39.97, lng: -105.33",
+    position: [
+      {
+        lat: 40.0,
+        lng: -105.29,
+      },
+    ],
   },
   {
     first: "Maria",
@@ -150,7 +230,12 @@ export const Data = [
     state: "NC",
     imgUrl:
       "https://images.pexels.com/photos/217869/pexels-photo-217869.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 40.00, lng: -105.29",
+    position: [
+      {
+        lat: 40.05,
+        lng: -105.3,
+      },
+    ],
   },
   {
     first: "Sandy",
@@ -159,7 +244,12 @@ export const Data = [
     state: "PA",
     imgUrl:
       "https://images.pexels.com/photos/3692909/pexels-photo-3692909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 40.05, lng: -105.30",
+    position: [
+      {
+        lat: 39.99,
+        lng: -105.31,
+      },
+    ],
   },
   {
     first: "Melinda",
@@ -168,7 +258,12 @@ export const Data = [
     state: "HI",
     imgUrl:
       "https://images.pexels.com/photos/160874/pexels-photo-160874.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 39.99, lng: -105.31",
+    position: [
+      {
+        lat: 40.27,
+        lng: -105.27,
+      },
+    ],
   },
   {
     first: "Jason",
@@ -177,6 +272,11 @@ export const Data = [
     state: "VA",
     imgUrl:
       "https://images.pexels.com/photos/1135191/pexels-photo-1135191.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=300",
-    "Placeholder latitude and longitude": "lat: 40.01, lng: -105.32",
+    position: [
+      {
+        lat: 40.01,
+        lng: -105.32,
+      },
+    ],
   },
 ];

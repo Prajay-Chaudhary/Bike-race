@@ -9,7 +9,7 @@ function Rider() {
   return (
     <section>
       <div className="container-fluid">
-        <div className="row bg-black p-5">
+        <div className="row bg-black p-5 mx-auto">
           <Row className="g-4 text-center ml-1 ml-md-0 text-center">
             <Col className=" text-black justify-content-center wrapper">
               {Data.map((item) => (
