@@ -4,8 +4,8 @@ import { Data } from "../assets/Data";
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import "./Rider.css"
-function Rider() {
+import "./Riders.css"
+function Riders() {
   return (
     <section>
       <div className="container-fluid">
@@ -37,6 +37,6 @@ function Rider() {
   );
 }
 
-export default Rider
+export default Riders
 
     

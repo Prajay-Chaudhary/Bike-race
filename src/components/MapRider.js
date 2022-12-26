@@ -39,7 +39,7 @@ const myIcon = new L.Icon({
             return (
               <Marker position={pointer} icon={myIcon} key={i}>
                 <Popup>
-                  <div className="card text-center bg-display">
+                  <div className="card text-center h-25">
                     <image
                       className="profile-image"
                       alt=" "
@@ -52,10 +52,10 @@ const myIcon = new L.Icon({
                       <small>{item.last}</small>
                     </h3>
                     <p>
-                      <small>{item.city}</small>
+                      <small className="text-danger">{item.city}</small>
                     </p>
                     <p>
-                      <small>{item.state}</small>
+                      <small className="text-info">{item.state}</small>
                     </p>
                   </div>
                 </Popup>

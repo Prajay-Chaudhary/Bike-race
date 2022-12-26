@@ -1,7 +1,7 @@
 import React from 'react'
 import Gallary from "../components/Gallary";
 import Footer from "../components/Footer";
-function Photo() {
+function Photos() {
   return (
     <div>
       <Gallary />
@@ -10,4 +10,4 @@ function Photo() {
   );
 }
 
-export default Photo
+export default Photos

@@ -30,13 +30,13 @@ const Navbar = () => {
             <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <Link to={"/Rider"}>Rider</Link>
+            <Link to={"/Riders"}>Riders</Link>
           </li>
           <li>
-            <Link to={"/Maps"}>Maps</Link>
+            <Link to={"/Location"}>Location</Link>
           </li>
           <li>
-            <Link to={"/Photo"}>Photo</Link>
+            <Link to={"/Photos"}>Photos</Link>
           </li>
           <li>
             <Link to={"/Contest"}>Contest</Link>
