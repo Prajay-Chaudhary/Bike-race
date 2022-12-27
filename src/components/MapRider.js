@@ -1,7 +1,6 @@
   import React, { useState } from 'react'
   import { Data } from "../assets/Data";
   import Footer from "../components/Footer";
-  import { useMap } from "https://cdn.esm.sh/react-leaflet";
   import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
   import "leaflet/dist/leaflet.css";
   import "leaflet-defaulticon-compatibility";
