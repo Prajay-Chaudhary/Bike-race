@@ -49,7 +49,7 @@ const GallaryItem = ({ url, id }) => {
               <img
                 src={url}
                 alt="bikes"
-                className="pop-up-image mx-auto img-fluid"
+                className="pop-up-image mx-auto img-fluid imgFull"
               />
             </div>
           </div>

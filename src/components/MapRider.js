@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Footer from "../components/Footer";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility";
@@ -27,8 +26,6 @@ const MapRider = () => {
     });
   }, []);
 
-  const zoom = 13;
-
   const icon = new L.Icon({
     iconUrl:
       "https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
@@ -41,12 +38,18 @@ const MapRider = () => {
   });
 
   return (
-    <>
+    <section>
       {loader && <div className="loader"></div>}
       <div className="container mb-5">
         <div className="row bg-black py-5"></div>
         <div className="row mb-5">
+          <div className="row text-center mb-2">
+            <h1 className="fw-bolder display-4 radient-text text ">
+              All current rider locations
+            </h1>
+          </div>
           <MapContainer
+            style={{ width: "100%", height: "80vh", zIndex: "0" }}
             center={[40.01, -105.26]}
             zoom={11}
             scrollWheelZoom={false}
@@ -63,38 +66,42 @@ const MapRider = () => {
                   icon={icon}
                 >
                   <Popup>
-                    <div className="card text-center h-25">
-                      <image
-                        className="profile-image"
-                        alt=" "
-                        src={data.image}
-                        style={{ width: "50%" }}
-                      />
-
-                      <h3>
-                        <small>{data.first_name}</small> &nbsp;
-                        <small>{data.last_name}</small>
-                      </h3>
-                      <p>
-                        <small className="text-danger">
-                          {data.city_of_origin}
-                        </small>
-                      </p>
-                      <p>
-                        <small className="text-info">
-                          {data.state_of_origin}
-                        </small>
-                      </p>
+                    <div className="container card text-center">
+                      <div className="row">
+                        <img
+                          className="profile-image px-0 mt-2"
+                          alt="profile"
+                          src={biker.image}
+                        />
+                      </div>
+                      <div className="row">
+                        <h3 className="text-black fs-5 px-2">
+                          <small>{biker.first_name}</small> &nbsp;
+                          <small>{biker.last_name}</small>
+                        </h3>
+                      </div>
+                      <div className="row">
+                        <p>
+                          <small className="text-danger">
+                            {biker.city_of_origin}
+                          </small>
+                        </p>
+                      </div>
+                      <div className="row">
+                        <p>
+                          <small className="text-info">
+                            {biker.state_of_origin}
+                          </small>
+                        </p>
+                      </div>
                     </div>
                   </Popup>
-                  ;
                 </Marker>
               ))}
           </MapContainer>
         </div>
-        <Footer />
       </div>
-    </>
+    </section>
   );
 };
 
