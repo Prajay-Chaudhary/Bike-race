@@ -9,10 +9,12 @@ import React, { useState, useEffect } from "react";
 function Rider() {
   const [data, setData] = useState(null);
   useEffect(() => {
-    axios.get('http://127.0.0.1:3001/api/v1/bikers').then((response) => {
-      setData(response.data);
-      console.log(response.data);
-    });
+    axios
+      .get('https://boulder-bike-race.herokuapp.com/api/v1/bikers')
+      .then((response) => {
+        setData(response.data);
+        console.log(response.data);
+      });
   }, []);
 
   return (

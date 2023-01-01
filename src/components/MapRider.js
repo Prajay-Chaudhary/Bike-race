@@ -19,11 +19,15 @@ const MapRider = () => {
     }
   }, [data]);
 
+
+  //gets the rider info from backend
   useEffect(() => {
-    axios.get("http://127.0.0.1:3001/api/v1/bikers").then((response) => {
-      setData(response.data);
-      console.log(response.data);
-    });
+    axios
+      .get("https://boulder-bike-race.herokuapp.com/api/v1/bikers")
+      .then((response) => {
+        setData(response.data);
+        console.log(response.data);
+      });
   }, []);
 
   const icon = new L.Icon({
@@ -56,7 +60,7 @@ const MapRider = () => {
           >
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" className=""
             />
             {data &&
               data.map((biker) => (

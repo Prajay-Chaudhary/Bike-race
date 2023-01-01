@@ -1,0 +1,24 @@
+.errorPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.thankYouTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.confirmationImg {
+    display: flex;
+    justify-content: center;
+}
+
+.notFound {
+    width: auto!important;
+    max-width: 50vw;
+}

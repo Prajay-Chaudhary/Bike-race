@@ -7,6 +7,12 @@
     width: 100vw;
 }
 
+
+/*a {
+    color: rgb(0, 0, 0) !;
+    text-decoration: none;
+}*/
+
 .profile-image {
     margin: auto;
     width: 100px;
