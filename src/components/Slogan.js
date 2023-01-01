@@ -80,7 +80,7 @@ function Slogan() {
       <div className="container-fluid mb-5">
         <div className="row bg-black p-5"></div>
         <div className="row">
-          <div className="col-12 col-lg-6">
+          <div className="col-12 col-lg-5">
             <div className="mx-auto text-center pb-3">
               <h1 className="font-bold text">Get started today!</h1>
 
@@ -161,7 +161,7 @@ function Slogan() {
               </form>
             </div>
           </div>
-          <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center">
+          <div className="col-12 col-lg-7 d-flex align-items-center justify-content-center">
             <div className="">
               <img
                 alt="slogan image"
