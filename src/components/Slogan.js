@@ -41,35 +41,23 @@ function Slogan() {
 
   if (confirmation) {
     return (
-      <section className=" d-flex flex-wrap lg:h-screen align-items-center">
-        <div className="w-full px-4 py-5 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
-          <div className="mx-auto max-w-lg text-center">
-            <h1 className="text-2xl font-bold sm:text-3xl">
-              Thank you for participating
-            </h1>
+      <section className=" d-flex flex-wrap align-items-center">
+        <div className="row bg-black p-5"></div>
+        <div className="w-full px-4 py-5">
+          <div className="mx-auto text-center">
+            <h1 className="">Thank you for participating</h1>
 
-            <p className="mt-4 text-gray-500">
+            <p className="mt-4">
               <img
                 src={successfull}
                 alt="confirmation"
-                className="confirmationImg"
+                className="confirmationImg img-fluid rounded"
               />
-              <a
-                href="/"
-                className="ml-3 inline-block rounded-lg bg-red-700 px-5 py-3 text-sm font-medium text-white"
-              >
+              <a href="/" className="bg-danger p-3">
                 Go Back
               </a>
             </p>
           </div>
-        </div>
-
-        <div className=" h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
-          <img
-            alt="Welcome"
-            src="https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
         </div>
       </section>
     );
@@ -105,6 +93,7 @@ function Slogan() {
                       type="email"
                       className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
                       placeholder="Enter email"
+                      required
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
@@ -118,6 +107,7 @@ function Slogan() {
                       type="text"
                       className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
                       placeholder="Enter Your First Name"
+                      required
                       onChange={(e) => setFirst_name(e.target.value)}
                     />
                   </div>
@@ -131,6 +121,7 @@ function Slogan() {
                       type="text"
                       className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
                       placeholder="Enter Your Last Name"
+                      required
                       onChange={(e) => setLast_name(e.target.value)}
                     />
                   </div>
@@ -145,6 +136,7 @@ function Slogan() {
                       type="password"
                       className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
                       placeholder="Max.50 characters Slogan"
+                      required
                       onChange={(e) => setSlogan(e.target.value)}
                     />
                   </div>
@@ -161,7 +153,7 @@ function Slogan() {
               </form>
             </div>
           </div>
-          <div className="col-12 col-lg-7 d-flex align-items-center justify-content-center">
+          <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center">
             <div className="">
               <img
                 alt="slogan image"
