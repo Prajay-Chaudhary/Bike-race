@@ -93,7 +93,7 @@ function Slogan() {
                       type="email"
                       className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
                       placeholder="Enter email"
-                      required
+                      
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
@@ -107,7 +107,7 @@ function Slogan() {
                       type="text"
                       className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
                       placeholder="Enter Your First Name"
-                      required
+                      
                       onChange={(e) => setFirst_name(e.target.value)}
                     />
                   </div>
@@ -121,7 +121,7 @@ function Slogan() {
                       type="text"
                       className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
                       placeholder="Enter Your Last Name"
-                      required
+                      
                       onChange={(e) => setLast_name(e.target.value)}
                     />
                   </div>
@@ -136,7 +136,7 @@ function Slogan() {
                       type="password"
                       className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
                       placeholder="Max.50 characters Slogan"
-                      required
+                      
                       onChange={(e) => setSlogan(e.target.value)}
                     />
                   </div>
