@@ -1,9 +1,11 @@
 import "./NavBar.css";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
+  const location = useLocation()
+  console.log(location.pathname)
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const [color, setColor] = useState(false);
@@ -25,7 +27,10 @@ const Navbar = () => {
             className="logo p-2"
           />
         </Link>
-        <ul className={click ? "nav-menu active" : "nav-menu"}>
+        <ul
+          onClick={handleClick}
+          className={click ? "nav-menu active" : "nav-menu"}
+        >
           <li>
             <Link to={"/"}>Home</Link>
           </li>

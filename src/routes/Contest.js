@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 function Contest() {
   return (
     <div>
-      <NavBar />
       <Slogan />
       <Footer />
     </div>

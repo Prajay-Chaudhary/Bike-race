@@ -1,67 +1,77 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import successfull from "../assets/successfull.png";
+import { useMutation } from "@tanstack/react-query";
 import contestImage from "../assets/contestImage.jpg";
 import "./Slogan.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Slogan() {
+  // success and error message
+  const successMsg = () => toast.success("Slogan submitted successfully!");
+  const errorMsg = () => toast.error("oops something went wrong");
+
+  // my hooks
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [slogan, setSlogan] = useState("");
+  const [btnValue, setBtnValue] = useState("SUBMIT");
   const [error, setError] = useState("");
-  const [first_name, setFirst_name] = useState("");
-  const [last_name, setLast_name] = useState("");
+  const contestsMutation = useMutation({
+    mutationFn: (data) =>
+      axios({
+        method: "POST",
+        url: "http://127.0.0.1:3001/api/v1/contests",
+        header: {
+          "Content-Type": "application/json",
+        },
+        data,
+      }),
+    onSuccess: () => {
+      setFirstname("");
+      setLastname("");
+      setEmail("");
+      setSlogan("");
+      successMsg();
+    },
+    onError: () => {
+      errorMsg();
+    },
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (slogan.length > 50) {
-      setError("Slogan must be 50 characters or less");
-    } else {
-      setError("");
+    // check if all fields are filled
+    if (!firstname || !lastname || !email || !slogan) {
+      setError("*All fields are required");
+      return true;
     }
-    if (email.length > 0 && slogan.length > 0) {
-      axios
-        .post('https://boulder-bike-race.herokuapp.com/api/v1/contests', {
-          email: email,
-          slogan: slogan,
-          first_name: first_name,
-          last_name: last_name,
-        })
-        .then((res) => {
-          console.log(res);
-          setConfirmation(true);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    // check if the email is valid
+    if (/\S+@\S+\.\S+/.test(email) === false) {
+      setError("*Enter a valid email address");
+      return true;
+    }
+
+    // check for length of slogan
+    if (slogan.length > 50) {
+      setError("*Slogan idea must be under 50 characters");
+      return true;
+    }
+
+    // when all input fields are filled
+    if (firstname && lastname && email && slogan) {
+      setError("");
+
+      // prepare data
+      contestsMutation.mutateAsync({
+        first_name: firstname,
+        last_name: lastname,
+        email,
+        slogan,
+      });
     }
   };
-
-  // confirmation div
-  const [confirmation, setConfirmation] = useState(false);
-
-  if (confirmation) {
-    return (
-      <section className=" d-flex flex-wrap align-items-center">
-        <div className="row bg-black p-5"></div>
-        <div className="w-full px-4 py-5">
-          <div className="mx-auto text-center">
-            <h1 className="">Thank you for participating</h1>
-
-            <p className="mt-4">
-              <img
-                src={successfull}
-                alt="confirmation"
-                className="confirmationImg img-fluid rounded"
-              />
-              <a href="/" className="bg-danger p-3">
-                Go Back
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section>
@@ -72,57 +82,65 @@ function Slogan() {
             <div className="mx-auto text-center pb-3">
               <h1 className="font-bold text">Get started today!</h1>
 
-              <p className="mt-4 text-gray-500">
+              <p className="mt-4">
                 Send us an idea of a slogan for the competition
                 <br />
                 the winner will get a free trip to the event 🚲
               </p>
             </div>
+
             <div className="div d-flex align-items-center justify-content-center">
+              <ToastContainer />
               <form
                 action=""
                 className="mx-auto mt-8 mb-0"
                 onSubmit={handleSubmit}
               >
                 <div>
-                  <label htmlFor="text" className="text text-start">
+                  <p className="text-danger">{error}</p>
+                  <label htmlFor="text" className="text text-start mr-1">
                     Email
                   </label>
+                  <span className="fas fa-envelope text-info"></span>
                   <div className="">
                     <input
                       type="email"
                       className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
                       placeholder="Enter email"
-                      
                       onChange={(e) => setEmail(e.target.value)}
+                      value={email}
+                      aria-describedby="basic-addon1"
+                      required
                     />
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="text" className="text">
+                  <label htmlFor="text" className="text mr-1">
                     First Name
                   </label>
+                  <span className="fas fa-user-circle text-info"></span>
                   <div className="">
                     <input
                       type="text"
                       className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
                       placeholder="Enter Your First Name"
-                      
-                      onChange={(e) => setFirst_name(e.target.value)}
+                      onChange={(e) => setFirstname(e.target.value)}
+                      value={firstname}
                     />
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="text" className="text">
+                  <label htmlFor="text" className="text mr-1">
                     Last Name
                   </label>
+                  <span className="fas fa-user-circle text-info"></span>
                   <div className="">
                     <input
                       type="text"
                       className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
                       placeholder="Enter Your Last Name"
-                      
-                      onChange={(e) => setLast_name(e.target.value)}
+                      value={lastname}
+                      onChange={(e) => setLastname(e.target.value)}
                     />
                   </div>
                 </div>
@@ -131,24 +149,27 @@ function Slogan() {
                   <label htmlFor="password" className="text">
                     Slogan
                   </label>
+                  <span className="fas fa-text text-info"></span>
                   <div className="">
                     <textarea
                       type="password"
                       className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
                       placeholder="Max.50 characters Slogan"
-                      
+                      rows="3"
+                      maxLength="100"
+                      value={slogan}
                       onChange={(e) => setSlogan(e.target.value)}
                     />
                   </div>
                 </div>
 
                 <div className="flex items-center mb-4">
-                  <button
+                  <input
                     type="submit"
                     className="btn btn-outline-danger text-center px-5 py-3 radient-text"
-                  >
-                    Send
-                  </button>
+                    onClick={handleSubmit}
+                    value={contestsMutation.isLoading ? "Loading..." : "Submit"}
+                  />
                 </div>
               </form>
             </div>
@@ -156,7 +177,7 @@ function Slogan() {
           <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center">
             <div className="">
               <img
-                alt="slogan image"
+                alt="slogan"
                 src={contestImage}
                 className="img-fluid rounded"
               />
