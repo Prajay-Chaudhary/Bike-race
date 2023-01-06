@@ -9,14 +9,14 @@ import "react-toastify/dist/ReactToastify.css";
 function Slogan() {
   // success and error message
   const successMsg = () => toast.success("Slogan submitted successfully!");
-  const errorMsg = () => toast.error("oops something went wrong");
+  const errorMsg = (error) =>
+    toast.error(error || "oops something went wrong");
 
   // my hooks
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [slogan, setSlogan] = useState("");
-  const [btnValue, setBtnValue] = useState("SUBMIT");
   const [error, setError] = useState("");
   const contestsMutation = useMutation({
     mutationFn: (data) =>
@@ -27,6 +27,10 @@ function Slogan() {
           "Content-Type": "application/json",
         },
         data,
+      }).then((r) => {
+        console.log(r);
+        if (r.data.id) return r.data;
+        return Promise.reject(new Error(Object.values(r.data)[0].join(', ')));
       }),
     onSuccess: () => {
       setFirstname("");
@@ -35,8 +39,10 @@ function Slogan() {
       setSlogan("");
       successMsg();
     },
-    onError: () => {
-      errorMsg();
+    onError: (error) => {
+      console.log({ error });
+
+      errorMsg(error.message);
     },
   });
 
@@ -90,7 +96,7 @@ function Slogan() {
             </div>
 
             <div className="div d-flex align-items-center justify-content-center">
-              <ToastContainer />
+              <ToastContainer/>
               <form
                 action=""
                 className="mx-auto mt-8 mb-0"
