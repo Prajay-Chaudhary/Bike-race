@@ -7,7 +7,7 @@ const GallaryItem = ({ url, id }) => {
       <div
         className="mt-2
                 image 
-                p-4"
+                "
         data-bs-toggle="modal"
         data-bs-target={`#a${id}`}
       >
