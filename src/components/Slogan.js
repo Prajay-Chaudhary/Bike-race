@@ -22,7 +22,7 @@ function Slogan() {
     mutationFn: (data) =>
       axios({
         method: "POST",
-        url: "http://127.0.0.1:3001/api/v1/contests",
+        url: "https://boulder-bike-race.herokuapp.com/api/v1/contests",
         header: {
           "Content-Type": "application/json",
         },
@@ -30,7 +30,7 @@ function Slogan() {
       }).then((r) => {
         console.log(r);
         if (r.data.id) return r.data;
-        return Promise.reject(new Error(Object.values(r.data)[0].join(', ')));
+        return Promise.reject(new Error(Object.values(r.data)[0].join(", ")));
       }),
     onSuccess: () => {
       setFirstname("");
