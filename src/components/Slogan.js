@@ -10,7 +10,7 @@ function Slogan() {
   // success and error message
   const successMsg = () => toast.success("Slogan submitted successfully!");
   const errorMsg = (error) =>
-    toast.error(error || "oops something went wrong");
+    toast.error(error || "oops something went wrong", { delay: 1000 });
 
   // my hooks
   const [firstname, setFirstname] = useState("");
