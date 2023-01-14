@@ -18,6 +18,13 @@ function Slogan() {
   const [email, setEmail] = useState("");
   const [slogan, setSlogan] = useState("");
   const [error, setError] = useState("");
+
+  // errors state
+  const [firstNameHasError, setFirstNameHasError] = useState(false);
+  const [lastNameHasError, setLastNameHasError] = useState(false);
+  const [emailHasError, setEmailHasError] = useState(false);
+  const [sloganHasError, setSloganHasError] = useState(false);
+
   const contestsMutation = useMutation({
     mutationFn: (data) =>
       axios({
@@ -48,27 +55,14 @@ function Slogan() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // check if all fields are filled
-    if (!firstname || !lastname || !email || !slogan) {
-      setError("*All fields are required");
-      return true;
-    }
-    // check if the email is valid
-    if (/\S+@\S+\.\S+/.test(email) === false) {
-      setError("*Enter a valid email address");
-      return true;
-    }
-
-    // check for length of slogan
-    if (slogan.length > 50) {
-      setError("*Slogan idea must be under 50 characters");
-      return true;
-    }
-
     // when all input fields are filled
-    if (firstname && lastname && email && slogan) {
-      setError("");
+    const mailOk = isEmailOk()
+    const lastnameOk = isLastNameOk()
+    const firstnameOk = isFirstNameOk()
+    const sloganOk = isSloganOk()
 
+    if (mailOk && lastnameOk && firstnameOk && sloganOk) {
+      console.log("send...");
       // prepare data
       contestsMutation.mutateAsync({
         first_name: firstname,
@@ -76,8 +70,46 @@ function Slogan() {
         email,
         slogan,
       });
+
     }
+
   };
+
+const isFirstNameOk =()=>{
+
+  if (firstname === "") {
+    setFirstNameHasError(true)
+    return false
+  }
+  return true;
+}
+
+const isLastNameOk = () => {
+    if (lastname === "") {
+      setLastNameHasError(true);
+      return false;
+    }
+    return true
+}
+
+const isSloganOk = () => {
+  console.log("slogan checking");
+    if (slogan === "" || slogan.length > 50) {
+      setSloganHasError(true);
+      return false;
+    }
+    return true;
+}
+
+const isEmailOk = () => {
+  const isEmail = /\S+@\S+\.\S+/.test(email)
+  console.log("good email :",isEmail)
+    if (email === "" || !isEmail) {
+      setEmailHasError(true)
+      return false;
+    }
+    return true;
+};
 
   return (
     <section>
@@ -96,12 +128,8 @@ function Slogan() {
             </div>
 
             <div className="div d-flex align-items-center justify-content-center">
-              <ToastContainer/>
-              <form
-                action=""
-                className="mx-auto mt-8 mb-0"
-                onSubmit={handleSubmit}
-              >
+              <ToastContainer />
+              <div className="mx-auto mt-8 mb-0">
                 <div>
                   <p className="text-danger">{error}</p>
                   <label htmlFor="text" className="text text-start mr-1">
@@ -111,13 +139,35 @@ function Slogan() {
                   <div className="">
                     <input
                       type="email"
-                      className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
+                      className={`w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg ${
+                        emailHasError ? "border border-danger border-5" : ""
+                      }
+                          ${
+                            email !== ""
+                              ? "border border-success border-[20px]"
+                              : ""
+                          }`}
                       placeholder="Enter email"
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+
+                        if (/\S+@\S+\.\S+/.test(email) === false) {
+                          setEmailHasError(true);
+                        } else {
+                          setEmailHasError(false);
+                        }
+                      }}
                       value={email}
                       aria-describedby="basic-addon1"
                       required
                     />
+                    <small
+                      className={`text-danger mb-2 ${
+                        emailHasError ? "d-block" : "d-none"
+                      }`}
+                    >
+                      This is required
+                    </small>
                   </div>
                 </div>
                 <div>
@@ -128,11 +178,29 @@ function Slogan() {
                   <div className="">
                     <input
                       type="text"
-                      className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
+                      className={`w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg ${
+                        firstNameHasError
+                          ? "border border-danger border-5"
+                          : " "
+                      } ${
+                        firstname !== ""
+                          ? "border border-success border-[20px]"
+                          : ""
+                      }`}
                       placeholder="Enter Your First Name"
-                      onChange={(e) => setFirstname(e.target.value)}
+                      onChange={(e) => {
+                        setFirstname(e.target.value);
+                        setFirstNameHasError(false);
+                      }}
                       value={firstname}
                     />
+                    <small
+                      className={`text-danger mb-2 ${
+                        firstNameHasError ? "d-block" : "d-none"
+                      }`}
+                    >
+                      This is required
+                    </small>
                   </div>
                 </div>
                 <div>
@@ -143,11 +211,27 @@ function Slogan() {
                   <div className="">
                     <input
                       type="text"
-                      className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
-                      placeholder="Enter Your Last Name"
+                      className={`w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg ${
+                        lastNameHasError ? "border border-danger border-5" : " "
+                      } ${
+                        lastname !== ""
+                          ? "border border-success border-[20px]"
+                          : ""
+                      }`}
+                      placeholder="Enter Your First Name"
+                      onChange={(e) => {
+                        setLastname(e.target.value);
+                        setLastNameHasError(false);
+                      }}
                       value={lastname}
-                      onChange={(e) => setLastname(e.target.value)}
                     />
+                    <small
+                      className={`text-danger mb-2 ${
+                        lastNameHasError ? "d-block" : "d-none"
+                      }`}
+                    >
+                      This is required
+                    </small>
                   </div>
                 </div>
 
@@ -159,25 +243,47 @@ function Slogan() {
                   <div className="">
                     <textarea
                       type="password"
-                      className="w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg"
+                      className={`w-small p-3 mb-3 text-sm shadow-sm form-control form-control-lg${
+                        sloganHasError ? "border border-danger border-5" : ""
+                      }
+                          ${
+                            slogan !== ""
+                              ? "border border-success border-[20px]"
+                              : ""
+                          }`}
                       placeholder="Max.50 characters Slogan"
                       rows="3"
                       maxLength="100"
+                      required
                       value={slogan}
-                      onChange={(e) => setSlogan(e.target.value)}
+                      onChange={(e) => {
+                        setSlogan(e.target.value);
+                        if (slogan.length > 50) {
+                          setSloganHasError(true);
+                        } else {
+                          setSloganHasError(false);
+                        }
+                      }}
                     />
+                    <small
+                      className={`text-danger mb-2 ${
+                        sloganHasError ? "d-block" : "d-none"
+                      }`}
+                    >
+                      This is required
+                    </small>
                   </div>
                 </div>
 
                 <div className="flex items-center mb-4">
-                  <input
-                    type="submit"
+                  <button
                     className="btn btn-outline-danger text-center px-5 py-3 radient-text"
                     onClick={handleSubmit}
-                    value={contestsMutation.isLoading ? "Loading..." : "Submit"}
-                  />
+                  >
+                    {contestsMutation.isLoading ? "Loading..." : "Submit"}
+                  </button>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
           <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center">
