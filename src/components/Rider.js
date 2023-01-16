@@ -40,7 +40,7 @@ function Rider() {
   if(loading){
     return (
       <div className="container d-flex justify-content-center p-5">
-        <div className="row align-items-center mt-5 p-5 text-center">
+        <div className="row mt-5 p-5 text-center">
           <div className="col-12 m-5 p-5">
             <CirclesWithBar
               height="100"
@@ -76,7 +76,7 @@ function Rider() {
                     />
                     <Card.Body>
                       <Card.Title>
-                        {biker.first_name}&nbsp{biker.last_name}
+                        {biker.first_name}&nbsp;{biker.last_name}
                       </Card.Title>
                       <Card.Text className="text-warning">
                         {biker.city_of_origin}
@@ -92,7 +92,7 @@ function Rider() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default Rider
