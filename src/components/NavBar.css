@@ -36,6 +36,14 @@
     color: rgb(255, 115, 0) !important;
 }
 
+.nav-menu li a {
+    color: #ffffff;
+}
+
+.nav-menu-active a {
+    color: rgb(255, 115, 0) !important;
+}
+
 .hamburger {
     display: none;
 }
