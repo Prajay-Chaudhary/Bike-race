@@ -7,12 +7,12 @@ const RaceCountDown = () => {
   const [timerHours, setTimerHours] = useState();
   const [timerMinutes, setTimerMinutes] = useState();
   const [timerSeconds, setTimerSeconds] = useState();
-  
-  
+
+
   let interval;
   const startTimer = () => {
     // Set the date we're counting down to
-    const countDownDate = new Date(" April 01,2023 00:00:00 ").getTime();
+    const countDownDate = new Date(" April 01,2025 00:00:00 ").getTime();
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countDownDate - now;

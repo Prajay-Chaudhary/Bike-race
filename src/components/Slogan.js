@@ -29,7 +29,7 @@ function Slogan() {
     mutationFn: (data) =>
       axios({
         method: "POST",
-        url: "https://boulder-bike-race.herokuapp.com/api/v1/contests",
+        url: "https://boulder-bike-race.herokuapp.com",
         header: {
           "Content-Type": "application/json",
         },
