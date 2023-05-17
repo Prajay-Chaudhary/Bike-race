@@ -55,7 +55,7 @@ const RaceCountDown = () => {
               >
                 Countdown to the race
               </h2>
-              <p className='fs-3 header-color'>April 1st, 2023</p>
+              <p className='fs-3 header-color'>April 1st, 2025</p>
             </div>
             <div
               id="countdown"
